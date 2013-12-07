@@ -4,7 +4,9 @@ Handlebars.registerHelper "commentDate", (date) ->
     return $.timeago(dateObj)
   "some time ago"
 
-
+#
+#  Commenting Widget
+#
 Template._comments.rendered = ->
   commentable = @data
   _.each commentable.comments(), (comment) ->
@@ -42,7 +44,9 @@ Template._comments.events
     # Add the comment
     Comment.create comment
 
-
+#
+#  Unread Widget
+#
 Template._unreadWidget.rendered = ->
   # Set the width of the dropdown to the computed value so the slide works correctly
   $('.unread-widget').on 'shown.bs.dropdown', (e) ->

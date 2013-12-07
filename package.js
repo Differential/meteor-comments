@@ -7,13 +7,13 @@ Package.on_use(function (api, where) {
   api.use([
     'templating',
     'handlebars',
-    'less'
+    'less',
+    'timeago'
   ], 'client');
 
   api.use([
     'coffeescript',
     'minimongoid',
-    'moment',
     'underscore'
   ], ['client', 'server']);
 

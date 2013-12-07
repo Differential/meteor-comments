@@ -16,10 +16,12 @@ class Comment extends Minimongoid
   @_collection = new Meteor.Collection 'comments'
 
   @unread: (tag) ->
+    # Grab all for current user
     selection = 
       notify:
         $in: [Meteor.userId()]
     
+    # Filter down using tags
     if tag
       selection.tags = 
         $in: [tag]

@@ -7,6 +7,7 @@
   "git": "https://github.com/BeDifferential/meteor-comments.git",
   "packages": {
     "minimongoid": "0.8.3",
-    "moment": "2.2.1",
+    "timeago": "0.0.2",
+    "font-awesome": "4.0.3"
   }
 }

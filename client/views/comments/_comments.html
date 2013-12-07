@@ -15,12 +15,18 @@
         <li class="list-group-item">No comments... yet</li>
       {{/each}}
     </ul>
-    <div class="form-group">
-      <textarea rows="5" class="form-control comment" placeholder="Your comments..."></textarea>
-    </div>
-    <button class="btn btn-primary add-comment">
-      <i class="icon-plus"></i> Comment
-    </button>
+    {{#if currentUser}}
+      <div class="form-group">
+        <textarea rows="5" class="form-control comment" placeholder="Your comments..."></textarea>
+      </div>
+      <button class="btn btn-primary add-comment">
+        <i class="icon-plus"></i> Comment
+      </button>
+    {{else}}
+      <div class="alert alert-warning">
+        You must be logged in to comment!
+      </div>
+    {{/if}}
   </div>
 </template>
 
@@ -30,9 +36,9 @@
             class="btn btn-default dropdown-toggle comments-btn"
             {{#unless count}} disabled {{/unless}} 
             data-toggle="dropdown">
-      <i class="icon-comment"></i>
+      <i class="fa fa-comment"></i>
       <span class="label {{countLabelClass}} unread-count">{{count}}</span>
-      <span class="caret"></span>
+      <i class="fa fa-caret-down"></i>
     </button>
     <ul class="dropdown-menu comments-dropdown pull-right" role="menu">
       <li>
