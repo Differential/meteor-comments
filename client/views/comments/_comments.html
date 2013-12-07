@@ -8,7 +8,7 @@
             {{comment}}
           </p>
           <p class="text-muted">
-            - {{username}} ({{date createdAt}})
+            - {{username}} ({{commentDate createdAt}})
           </p>
         </li>
       {{else}}
@@ -45,7 +45,7 @@
           <a href="{{path}}">
             {{commentPreview}}
             <br>
-            - {{username}} ({{date createdAt}})
+            - {{username}} ({{commentDate createdAt}})
           </a>
         </li>
       {{/each}}

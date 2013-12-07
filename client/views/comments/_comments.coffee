@@ -1,3 +1,10 @@
+Handlebars.registerHelper "commentDate", (date) ->
+  if date
+    dateObj = new Date(date)
+    return $.timeago(dateObj)
+  "some time ago"
+
+
 Template._comments.rendered = ->
   commentable = @data
   _.each commentable.comments(), (comment) ->
