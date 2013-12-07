@@ -1,0 +1,54 @@
+<template name="_comments">
+  <div class="comments">
+    <h3>Comments</h3>
+    <ul class="list-group">
+      {{#each comments}}
+        <li class="list-group-item">
+          <p class="text-primary">
+            {{comment}}
+          </p>
+          <p class="text-muted">
+            - {{username}} ({{date createdAt}})
+          </p>
+        </li>
+      {{else}}
+        <li class="list-group-item">No comments... yet</li>
+      {{/each}}
+    </ul>
+    <div class="form-group">
+      <textarea rows="5" class="form-control comment" placeholder="Your comments..."></textarea>
+    </div>
+    <button class="btn btn-primary add-comment">
+      <i class="icon-plus"></i> Comment
+    </button>
+  </div>
+</template>
+
+<template name="_unreadWidget">
+  <div class="btn-group unread-widget">
+    <button type="button" 
+            class="btn btn-default dropdown-toggle comments-btn"
+            {{#unless count}} disabled {{/unless}} 
+            data-toggle="dropdown">
+      <i class="icon-comment"></i>
+      <span class="label {{countLabelClass}} unread-count">{{count}}</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu comments-dropdown pull-right" role="menu">
+      <li>
+        <a href="#" class="clear-comments">
+          Clear All <i class="icon-remove pull-right"></i>
+        </a>
+      </li>
+      {{#each unreadComments}}
+        <li id="{{id}}" class="comment">
+          <a href="{{path}}">
+            {{commentPreview}}
+            <br>
+            - {{username}} ({{date createdAt}})
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

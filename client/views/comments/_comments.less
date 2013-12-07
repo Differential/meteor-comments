@@ -1,0 +1,40 @@
+.comments-btn{
+  i{
+    position: relative;
+    font-size: 20px;
+    line-height: 16px;
+  }
+
+  .unread-count{
+    position: absolute;
+    padding: .2em .45em .3em;
+    left: 23px;
+    top: 14px;
+    font-size: 8px;
+    opacity: 0.9;
+    border: 1px solid #fff;
+  }
+}
+
+.comments-dropdown{
+  
+  overflow: hidden;
+
+  li{
+    &:first-child{
+      border-bottom: 1px solid #999;
+
+      i{
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    a{
+      width: 100%;
+    }
+  }
+  li + li + li{
+    border-top: 1px solid #ccc;
+  }
+}
