@@ -21,7 +21,7 @@ Template._comments.events
     comment = 
       associationId: @id
       userId: Meteor.userId()
-      username: Meteor.user().username
+      username: Meteor.user().username || Meteor.user().emails[0].address
       comment: $('.comment').val()
       path: Router.current().path
       notify: []
@@ -47,28 +47,40 @@ Template._comments.events
 #
 #  Unread Widget
 #
+getOpts = ->
+  defaults =
+    tags: []
+    align: 'left'
+  opts = Session.get 'comments.unread.options'
+  _.extend defaults, opts
+
 Template._unreadWidget.rendered = ->
+  # Set options hash
+  Session.set 'comments.unread.options', @data
+
   # Set the width of the dropdown to the computed value so the slide works correctly
   $('.unread-widget').on 'shown.bs.dropdown', (e) ->
     $('.comments-dropdown').css 'width', $('.comments-dropdown').width()
 
 Template._unreadWidget.helpers
   count: ->
-    Comment.unread(@id).length
+    Comment.unread(getOpts().tags).length
 
   countLabelClass: ->
-    if Comment.unread(@id).length > 0 then 'label-danger' else 'label-default'
+    if Comment.unread(getOpts().tags).length > 0 then 'label-danger' else 'label-default'
 
   unreadComments: ->
-    Comment.unread(@id)
+    Comment.unread(getOpts().tags)
+
+  align: ->
+    getOpts().align
 
 Template._unreadWidget.events  
   'click .clear-comments': (e) ->
     e.preventDefault()
     e.stopPropagation()
     
-    count = Comment.unread(@id).length
-    datasetId = @id
+    count = Comment.unread(getOpts().tags).length
 
     $('.comments-dropdown li.comment').each (i, e) ->
       # Slide each item out to right
@@ -80,5 +92,5 @@ Template._unreadWidget.events
         if i+1 is count
           $('.comments-dropdown').slideUp 300, ->
             # Finally, actually clear the notification in the database
-            _.each Comment.unread(datasetId), (comment) ->
+            _.each Comment.unread(getOpts().tags), (comment) ->
               comment.clearNotification()

@@ -40,10 +40,10 @@
       <span class="label {{countLabelClass}} unread-count">{{count}}</span>
       <i class="fa fa-caret-down"></i>
     </button>
-    <ul class="dropdown-menu comments-dropdown pull-right" role="menu">
+    <ul class="dropdown-menu comments-dropdown pull-{{align}}" role="menu">
       <li>
         <a href="#" class="clear-comments">
-          Clear All <i class="icon-remove pull-right"></i>
+          Clear All <i class="fa fa-times pull-right"></i>
         </a>
       </li>
       {{#each unreadComments}}
