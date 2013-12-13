@@ -12,6 +12,20 @@ Template._comments.rendered = ->
   _.each commentable.comments(), (comment) ->
     comment.clearNotification()
 
+  options =
+    container: 'editor',
+    basePath: '/packages/comments/public/epiceditor'
+    autogrow: true
+    focusOnLoad: true
+    clientSideStorage: false
+    button:
+      preview: false
+    theme:
+      editor: '/themes/editor/epic-grey.css'
+      preview: '/themes/preview/github.css'
+
+  editor = new EpicEditor(options).load()
+
 Template._comments.helpers
   comments: ->
     @comments()
