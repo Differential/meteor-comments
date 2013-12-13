@@ -9,6 +9,7 @@ Package.on_use(function (api, where) {
     'handlebars',
     'less',
     'timeago',
+    'showdown',
     'ace-embed'
   ], 'client');
 
@@ -23,7 +24,10 @@ Package.on_use(function (api, where) {
   api.add_files([
     'client/views/comments/_comments.html',
     'client/views/comments/_comments.coffee',
-    'client/views/comments/_comments.less'
+    'client/views/comments/_comments.less',
+    'client/views/unreadWidget/_unreadWidget.html',
+    'client/views/unreadWidget/_unreadWidget.coffee',
+    'client/views/unreadWidget/_unreadWidget.less'
   ], 'client');
 
   api.add_files([
