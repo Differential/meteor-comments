@@ -8,7 +8,8 @@ Package.on_use(function (api, where) {
     'templating',
     'handlebars',
     'less',
-    'timeago'
+    'timeago',
+    'ace-embed'
   ], 'client');
 
   api.use([

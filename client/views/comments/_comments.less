@@ -43,3 +43,37 @@
     border-top: 1px solid #ccc;
   }
 }
+
+.editor-group{
+  position: relative;
+
+  #editor, #preview {
+    width: 100%;
+    height: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+
+  #preview{
+    overflow-y: scroll;
+  }
+
+  .toggle-preview{
+    background: transparent;
+    border: none !important;
+    color: #ccc;
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+  }
+
+  .add-comment{
+    position: relative;
+    top: 10px;
+  }
+
+  .hide{
+    display: none !important;
+  }
+}

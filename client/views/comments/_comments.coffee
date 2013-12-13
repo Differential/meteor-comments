@@ -4,6 +4,9 @@ Handlebars.registerHelper "commentDate", (date) ->
     return $.timeago(dateObj)
   "some time ago"
 
+Editor = {}
+
+
 #
 #  Commenting Widget
 #
@@ -12,31 +15,40 @@ Template._comments.rendered = ->
   _.each commentable.comments(), (comment) ->
     comment.clearNotification()
 
-  options =
-    container: 'editor',
-    basePath: '/packages/comments/public/epiceditor'
-    autogrow: true
-    focusOnLoad: true
-    clientSideStorage: false
-    button:
-      preview: false
-    theme:
-      editor: '/themes/editor/epic-grey.css'
-      preview: '/themes/preview/github.css'
+    Editor = ace.edit 'editor'
+    Editor.setTheme 'ace/theme/chrome'
+    Editor.getSession().setMode 'ace/mode/markdown'
+    Editor.setFontSize 16
+    Editor.renderer.setShowPrintMargin false
+    Editor.renderer.setShowGutter false
+    Editor.setHighlightActiveLine true
+    Editor.on 'change', (e) ->
+      Session.set 'comments.new.value', Editor.getValue()
 
-  editor = new EpicEditor(options).load()
-
+    #Session.set 'comments.new.editor', editor
+    
 Template._comments.helpers
   comments: ->
     @comments()
 
+  newComment: ->
+    Session.get 'comments.new.value'
+
+  previewing: ->
+    Session.get 'comments.new.previewing'
+
 Template._comments.events
+  'click .toggle-preview': (e) ->
+    preview = Session.get 'comments.new.previewing'
+    preview = !preview
+    Session.set 'comments.new.previewing', preview
+
   'click .add-comment': (e) ->
     comment = 
       associationId: @id
       userId: Meteor.userId()
       username: Meteor.user().username || Meteor.user().emails[0].address
-      comment: $('.comment').val()
+      comment: Session.get 'comments.new.value'
       path: Router.current().path
       notify: []
       tags: []
@@ -57,6 +69,12 @@ Template._comments.events
 
     # Add the comment
     Comment.create comment
+
+    # Clear values
+    Session.set('comments.new.value', '')
+    Editor.setValue('')
+
+
 
 #
 #  Unread Widget

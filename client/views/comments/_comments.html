@@ -4,8 +4,8 @@
     <ul class="list-group">
       {{#each comments}}
         <li class="list-group-item">
-          <p class="text-primary">
-            {{comment}}
+          <p>
+            {{#markdown}}{{comment}}{{/markdown}}
           </p>
           <p class="text-muted">
             - {{username}} ({{commentDate createdAt}})
@@ -16,13 +16,31 @@
       {{/each}}
     </ul>
     {{#if currentUser}}
-      <div class="form-group">
-        <div id="editor"></div>
-        <!-- <textarea rows="5" class="form-control comment" placeholder="Your comments..."></textarea> -->
+      <div class="form-group editor-group">
+        
+        <div id="preview" class="{{#unless previewing}}hide{{/unless}}">
+          {{#markdown}}{{newComment}}{{/markdown}}
+        </div>
+
+        <div id="editor-wrapper" class="{{#if previewing}}hide{{/if}}">
+        {{#constant}}
+          <div id="editor"></div>
+        {{/constant}}
+        </div>
+
+        <button class="toggle-preview">
+          {{#if previewing}}
+            <i class="fa fa-eye-slash icon-eye-close"></i>
+          {{else}}
+            <i class="fa fa-eye icon-eye-open"></i>
+          {{/if}}
+        </button>
+
+        <button class="btn btn-primary add-comment">
+          <i class="fa fa-plus icon-plus"></i> Comment
+        </button>
+      
       </div>
-      <button class="btn btn-primary add-comment">
-        <i class="icon-plus"></i> Comment
-      </button>
     {{else}}
       <div class="alert alert-warning">
         You must be logged in to comment!
