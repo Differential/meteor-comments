@@ -27,6 +27,8 @@ Template._comments.rendered = ->
     Editor.setHighlightActiveLine true
     Editor.on 'change', (e) ->
       Session.set 'comments.new.value', Editor.getValue()
+
+  $('.toggle-preview').tooltip title: 'Click to toggle markdown preview mode.'
     
 Template._comments.helpers
   comments: ->
