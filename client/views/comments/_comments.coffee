@@ -8,6 +8,7 @@ Editor = {}
 
 Template._comments.created = ->
   Session.set 'comments.new.value', ''
+  Session.set 'comments.new.previewing', false
 
 #
 #  Commenting Widget
