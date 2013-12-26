@@ -6,7 +6,7 @@ version: 0.0.9
 desc: A meteorite package for commenting.
 
 ---
-# meteor-comments
+# meteor-commentss
 
 A meteorite package to add a commenting section to collections on at the document level.
 
