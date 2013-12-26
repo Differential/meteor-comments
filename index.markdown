@@ -13,10 +13,10 @@ A meteorite package to add a commenting section to collections on at the documen
 
 This package currently requires you to use coffeescript and minimongoid.  The first step is to create a collection and extend the `Commentable` minimongoid class:
 
-```
+{% highlight coffeescript %}
 class @Response extends Commentable
   @_collection = new Meteor.Collection 'responses'
-```
+{% endhighlight %}
 
 
 Render the comments template, passing it the context of your <code>Commentable</code>.
@@ -29,7 +29,6 @@ The system can automatically help alert users who have already commented if a ne
 
 ```
 {{ > _unreadWidget opts}}
-
 
 opts: ->
   tags: []
