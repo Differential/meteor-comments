@@ -1,5 +1,5 @@
-name: accounts-entry
+name: meteor-comments
 markdown: redcarpet
 pygments: true
-baseurl: /accounts-entry
+baseurl: /meteor-comments
 exclude: ["vendor"]
