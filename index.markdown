@@ -16,7 +16,6 @@ This package currently requires you to use coffeescript and minimongoid.  The fi
 ```
 class @Response extends Commentable
   @_collection = new Meteor.Collection 'responses'
-  
 ```
 
 
