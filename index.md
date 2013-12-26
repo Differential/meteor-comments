@@ -6,7 +6,7 @@ version: 0.0.9
 desc: A meteorite package for commenting.
 
 ---
-# meteor-commentss
+# meteor-comments
 
 A meteorite package to add a commenting section to collections on at the document level.
 
@@ -25,7 +25,7 @@ Render the comments template, passing it the context of your `Commentable`.
 
 The system can automatically help alert users who have already commented if a new comment is added.  You can use the built-in template for this.
 
-<code>{{ _unreadWidget opts }}</code>
+<code>{{ > _unreadWidget opts }}</code>
 
 ```
 opts: ->
