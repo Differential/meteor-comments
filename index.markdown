@@ -3,9 +3,9 @@ layout: default
 username: BeDifferential
 repo: accounts-entry
 version: 0.3.0
-desc: A meteorite package for meteor sign up and sign in pages.
+desc: A meteorite package for commenting.
 
 ---
-# accounts-entry
+# meteor-comments
 
-A meteorite package that relies on Iron Router and gives you sign page login styles.
+A meteorite package to add a commenting section to collections on at the document level.
