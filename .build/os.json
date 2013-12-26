@@ -1,0 +1,40 @@
+{
+  "format": "unipackage-slice-pre1",
+  "packageVariables": [
+    {
+      "name": "Commentable",
+      "export": true
+    },
+    {
+      "name": "Comment",
+      "export": true
+    },
+    {
+      "name": "__coffeescriptShare"
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "coffeescript"
+    },
+    {
+      "package": "minimongoid"
+    },
+    {
+      "package": "underscore"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "os/packages/comments.js",
+      "length": 3341,
+      "offset": 0,
+      "servePath": "/packages/comments.js",
+      "sourceMap": "os/packages/comments.js.map"
+    }
+  ]
+}

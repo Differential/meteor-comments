@@ -1,0 +1,34 @@
+.comments-btn i.fa-comment {
+  position: relative;
+  font-size: 20px;
+  line-height: 16px;
+}
+.comments-btn i.fa-caret-down {
+  position: relative;
+  left: 5px;
+}
+.comments-btn .unread-count {
+  position: absolute;
+  padding: .2em .45em .3em;
+  left: 23px;
+  top: 14px;
+  font-size: 8px;
+  opacity: 0.9;
+  border: 1px solid #fff;
+}
+.comments-dropdown {
+  overflow: hidden;
+}
+.comments-dropdown li:first-child {
+  border-bottom: 1px solid #999;
+}
+.comments-dropdown li:first-child i {
+  position: relative;
+  top: 2px;
+}
+.comments-dropdown li a {
+  width: 100%;
+}
+.comments-dropdown li + li + li {
+  border-top: 1px solid #ccc;
+}

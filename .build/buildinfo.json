@@ -1,0 +1,62 @@
+{
+  "builtBy": "meteor/10",
+  "sliceDependencies": {
+    "browser.json": {
+      "files": {
+        "/home/schnie/repos/liquid/packages/comments/package.js": "4b39a612892364b38481c63deebfa1486c3f957d",
+        "/home/schnie/repos/liquid/packages/comments/client/views/comments/_comments.html": "9d1c3b3a3cff163f63c3aa7a934617a2a06c1583",
+        "/home/schnie/repos/liquid/packages/comments/client/views/comments/_comments.coffee": "f39cae57222a39edfca189b8641a85f2d131d28e",
+        "/home/schnie/repos/liquid/packages/comments/client/views/comments/_comments.less": "50d573d93ee4310894e1ee18ac1103c4381d3e65",
+        "/home/schnie/repos/liquid/packages/comments/client/views/unreadWidget/_unreadWidget.html": "82abab7c11afe0cb73bfb7dd08d379ec3ce228a1",
+        "/home/schnie/repos/liquid/packages/comments/client/views/unreadWidget/_unreadWidget.coffee": "794361f1bc460bc68285fff0ea61a5bfeafb0dfe",
+        "/home/schnie/repos/liquid/packages/comments/client/views/unreadWidget/_unreadWidget.less": "582a520665a158132bd40f25d544a17aec4b0145",
+        "/home/schnie/repos/liquid/packages/comments/collections/comments.coffee": "80add7f828055d78009e7b7a3f86d5fe4ac2cfc6",
+        "/home/schnie/repos/liquid/packages/timeago/package.js": "b72e14976f28d2a0d399c0a122e014276b7d835a",
+        "/home/schnie/repos/liquid/packages/ace-embed/package.js": "af1108c41d946f3f7b142b32c02fa2b7d2455a9d",
+        "/home/schnie/repos/liquid/packages/minimongoid/package.js": "38b06e68b62bf83ccf337c3edf8c2ac5aa5a5aa5"
+      },
+      "directories": []
+    },
+    "os.json": {
+      "files": {
+        "/home/schnie/repos/liquid/packages/comments/package.js": "4b39a612892364b38481c63deebfa1486c3f957d",
+        "/home/schnie/repos/liquid/packages/comments/server/publications.coffee": "d010d6d8ce5179ffd0b746fa5484ea337651a513",
+        "/home/schnie/repos/liquid/packages/comments/collections/comments.coffee": "80add7f828055d78009e7b7a3f86d5fe4ac2cfc6",
+        "/home/schnie/repos/liquid/packages/minimongoid/package.js": "38b06e68b62bf83ccf337c3edf8c2ac5aa5a5aa5"
+      },
+      "directories": []
+    },
+    "tests.browser.json": {
+      "files": {
+        "/home/schnie/repos/liquid/packages/comments/package.js": "4b39a612892364b38481c63deebfa1486c3f957d"
+      },
+      "directories": []
+    },
+    "tests.os.json": {
+      "files": {
+        "/home/schnie/repos/liquid/packages/comments/package.js": "4b39a612892364b38481c63deebfa1486c3f957d"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/home/schnie/repos/liquid/packages/comments/package.js": "4b39a612892364b38481c63deebfa1486c3f957d"
+    },
+    "directories": []
+  },
+  "pluginProviderPackages": {
+    "comments": "/home/schnie/repos/liquid/packages/comments",
+    "meteor": "/home/schnie/.meteor/packages/meteor/c91bc503fa",
+    "templating": "/home/schnie/.meteor/packages/templating/92e4a649f3",
+    "handlebars": "/home/schnie/.meteor/packages/handlebars/0a8b732b9d",
+    "less": "/home/schnie/.meteor/packages/less/fdc72d3d3d",
+    "timeago": "/home/schnie/repos/liquid/packages/timeago",
+    "showdown": "/home/schnie/.meteor/packages/showdown/83abd58dc4",
+    "ace-embed": "/home/schnie/repos/liquid/packages/ace-embed",
+    "coffeescript": "/home/schnie/.meteor/packages/coffeescript/2601fac52e",
+    "minimongoid": "/home/schnie/repos/liquid/packages/minimongoid",
+    "underscore": "/home/schnie/.meteor/packages/underscore/cb996a9546"
+  },
+  "source": "/home/schnie/repos/liquid/packages/comments"
+}

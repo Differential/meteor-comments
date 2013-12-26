@@ -1,0 +1,72 @@
+{
+  "format": "unipackage-slice-pre1",
+  "packageVariables": [
+    {
+      "name": "Commentable",
+      "export": true
+    },
+    {
+      "name": "Comment",
+      "export": true
+    },
+    {
+      "name": "__coffeescriptShare"
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "templating"
+    },
+    {
+      "package": "handlebars"
+    },
+    {
+      "package": "less"
+    },
+    {
+      "package": "timeago"
+    },
+    {
+      "package": "showdown"
+    },
+    {
+      "package": "ace-embed"
+    },
+    {
+      "package": "coffeescript"
+    },
+    {
+      "package": "minimongoid"
+    },
+    {
+      "package": "underscore"
+    }
+  ],
+  "resources": [
+    {
+      "type": "css",
+      "file": "browser/packages/comments/client/views/comments/_comments.less.css",
+      "length": 553,
+      "offset": 0,
+      "servePath": "/packages/comments/client/views/comments/_comments.less.css"
+    },
+    {
+      "type": "css",
+      "file": "browser/packages/comments/client/views/unreadWidget/_unreadWidget.less.css",
+      "length": 628,
+      "offset": 0,
+      "servePath": "/packages/comments/client/views/unreadWidget/_unreadWidget.less.css"
+    },
+    {
+      "type": "prelink",
+      "file": "browser/packages/comments.js",
+      "length": 12475,
+      "offset": 0,
+      "servePath": "/packages/comments.js",
+      "sourceMap": "browser/packages/comments.js.map"
+    }
+  ]
+}
