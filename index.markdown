@@ -11,7 +11,7 @@ desc: A meteorite package for commenting.
 A meteorite package to add a commenting section to collections on at the document level.
 
 
-This package currently requires you to use coffeescript and minimongoid.  The first step is to create a collection that extends the `Commentable` minimongoid class and optionally provide a `before_comment` hook to modify the comment document:
+This package currently requires you to use coffeescript and minimongoid.  The first step is to create a collection that extends the `Commentable` minimongoid class and optionally provide a `before_comment` hook to modify the comment document.  You can add additional users to notify and add tags to help organize notifications in your app (see below, for rest of the story).
 
 ```
 class @Response extends Commentable
@@ -31,7 +31,7 @@ Render the comments template, passing it the context of your `Commentable`.
 `{{ comments }}`
 
 
-The system can automatically help alert users who have already commented if a new comment is added.  You can use the built-in template for this.  You can optionally provide an array of tags that can help organize how notifications are displayed.
+The system can automatically help alert users who have already commented if a new comment is added.  You can use the built-in template for this.  You can optionally provide an array of tags that can help organize how notifications are displayed/filtered.
 
 {% assign unread = '{{ > _unreadWidget opts }}' %}
 `{{ unread }}`
