@@ -21,11 +21,12 @@ class @Response extends Commentable
 
 Render the comments template, passing it the context of your `Commentable`.
 
-{% assign comments = '{{ > _comments response }}' %} {% assign unread = '{{ > _unreadWidget opts }}' %}
+{% assign comments = '{{ > _comments response }}' %}
 `{{ comments }}`
 
 
 The system can automatically help alert users who have already commented if a new comment is added.  You can use the built-in template for this.
+{% assign unread = '{{ > _unreadWidget opts }}' %}
 `{{ unread }}`
 
 ```
