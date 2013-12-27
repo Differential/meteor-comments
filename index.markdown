@@ -21,8 +21,8 @@ class @Response extends Commentable
 
 Render the comments template, passing it the context of your `Commentable`.
 
-{% highlight handlebars %}
-{{ > _comments response }}
+{% highlight html %}
+{{ _comments response }}
 {% endhighlight %}
 
 The system can automatically help alert users who have already commented if a new comment is added.  You can use the built-in template for this.
