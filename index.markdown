@@ -21,7 +21,7 @@ class @Response extends Commentable
 
 Render the comments template, passing it the context of your `Commentable`.
 
-{% highlight html %}
+{% highlight handlebars %}
 {{ > _comments response }}
 {% endhighlight %}
 
