@@ -26,7 +26,6 @@ Render the comments template, passing it the context of your `Commentable`.
 
 
 The system can automatically help alert users who have already commented if a new comment is added.  You can use the built-in template for this.
-
 `{{ unread }}`
 
 ```
