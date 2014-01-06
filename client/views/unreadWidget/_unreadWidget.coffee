@@ -21,5 +21,6 @@ Template._unreadWidgetDropdown.events
         if i+1 is count
           $('.comments-dropdown').slideUp 300, ->
             # Finally, actually clear the notification in the database
+            $('[data-toggle="dropdown"]').parent().removeClass('open')
             _.each Comment.unread(tags), (comment) ->
               comment.clearNotification()
