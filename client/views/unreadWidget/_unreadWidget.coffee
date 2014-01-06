@@ -22,4 +22,4 @@ Template._unreadWidgetDropdown.events
           $('.comments-dropdown').slideUp 300, ->
             # Finally, actually clear the notification in the database
             _.each Comment.unread(tags), (comment) ->
-              #comment.clearNotification()
+              comment.clearNotification()
