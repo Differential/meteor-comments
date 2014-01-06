@@ -1,28 +1,36 @@
 <template name="_unreadWidget">
   <div class="btn-group unread-widget">
-    <button type="button" 
-            class="btn btn-default dropdown-toggle comments-btn"
-            {{#unless count}} disabled {{/unless}} 
-            data-toggle="dropdown">
-      <i class="fa fa-comment icon-comment"></i>
-      <span class="label {{countLabelClass}} unread-count">{{count}}</span>
-      <i class="fa fa-caret-down icon-caret-down"></i>
-    </button>
-    <ul class="dropdown-menu comments-dropdown pull-{{align}}" role="menu">
-      <li>
-        <a href="#" class="clear-comments">
-          Clear All <i class="fa fa-times icon-remove pull-right"></i>
+    {{unreadWidgetTrigger this}}
+    {{unreadWidgetDropdown this}}
+  </div>
+</template>
+
+<template name="_unreadWidgetTrigger">
+  <button type="button" 
+          class="btn btn-default dropdown-toggle comments-btn"
+          {{#unless count}} disabled {{/unless}} 
+          data-toggle="dropdown">
+    <i class="fa fa-comment icon-comment"></i>
+    <span class="label {{countLabelClass}} unread-count">{{count}}</span>
+    <i class="fa fa-caret-down icon-caret-down"></i>
+  </button>
+</template>
+
+<template name="_unreadWidgetDropdown">
+  <ul class="dropdown-menu comments-dropdown pull-{{align}}" role="menu">
+    <li>
+      <a href="#" class="clear-comments">
+        Clear All <i class="fa fa-times icon-remove pull-right"></i>
+      </a>
+    </li>
+    {{#each unreadComments}}
+      <li id="{{id}}" class="comment">
+        <a href="{{path}}">
+          {{commentPreview}}
+          <br>
+          - {{username}} ({{commentDate createdAt}})
         </a>
       </li>
-      {{#each unreadComments}}
-        <li id="{{id}}" class="comment">
-          <a href="{{path}}">
-            {{commentPreview}}
-            <br>
-            - {{username}} ({{commentDate createdAt}})
-          </a>
-        </li>
-      {{/each}}
-    </ul>
-  </div>
+    {{/each}}
+  </ul>
 </template>

@@ -27,7 +27,10 @@ Package.on_use(function (api, where) {
     'client/views/comments/_comments.less',
     'client/views/unreadWidget/_unreadWidget.html',
     'client/views/unreadWidget/_unreadWidget.coffee',
-    'client/views/unreadWidget/_unreadWidget.less'
+    'client/views/unreadWidget/_unreadWidget.less',
+    'client/subscriptions.coffee',
+    'client/helpers.coffee',
+    'client/config.coffee'
   ], 'client');
 
   api.add_files([
