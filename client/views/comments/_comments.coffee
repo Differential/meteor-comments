@@ -18,6 +18,7 @@ Template._comments.rendered = ->
   _.each commentable.comments(), (comment) ->
     comment.clearNotification()
 
+  setup = ->
     Editor = ace.edit 'editor'
     Editor.setTheme 'ace/theme/chrome'
     Editor.getSession().setMode 'ace/mode/markdown'
@@ -27,6 +28,8 @@ Template._comments.rendered = ->
     Editor.setHighlightActiveLine true
     Editor.on 'change', (e) ->
       Session.set 'comments.new.value', Editor.getValue()
+
+  setTimeout setup, 300
 
   $('.toggle-preview').tooltip title: 'Click to toggle markdown preview mode.'
     
