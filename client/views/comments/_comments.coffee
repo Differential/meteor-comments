@@ -35,7 +35,7 @@ Template._comments.rendered = ->
     
 Template._comments.helpers
   comments: ->
-    @comments()
+    _.sortBy @comments(), 'createdAt'
 
   newComment: ->
     Session.get 'comments.new.value'
