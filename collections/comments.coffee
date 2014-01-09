@@ -9,22 +9,24 @@ class Commentable extends Minimongoid
     {name: 'comments', foreign_key: 'associationId'}
   ]
 
+  commentCount: ->
+    if @comments then @comments().length
+
   before_comment: (comment) ->
     comment
     
 class Comment extends Minimongoid
   @_collection = new Meteor.Collection 'comments'
 
-  @unread: (tags) ->
+  @unread: (tags = {}) ->
     # Grab all for current user
     selection = 
       notify:
         $in: [Meteor.userId()]
     
     # Filter down using tags
-    if tags && _.isArray(tags) && tags.length > 0
-      selection.tags = 
-        $in: tags
+    if tags && _.isObject(tags) && _.keys(tags).length > 0
+      selection.tags = tags
 
     @where selection
 
