@@ -9,7 +9,6 @@ Package.on_use(function (api, where) {
     'handlebars',
     'less',
     'timeago',
-    'showdown',
     'ace-embed'
   ], 'client');
 
