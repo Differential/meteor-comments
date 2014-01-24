@@ -5,9 +5,8 @@ class Commentable extends Minimongoid
     super(attr, parent)
     if Meteor.subscribe then Meteor.subscribe 'comments', @id
 
-  @has_many: [
-    {name: 'comments', foreign_key: 'associationId'}
-  ]
+  comments: ->
+    Comment.where associationId: @id
 
   commentCount: ->
     if @comments then @comments().length
