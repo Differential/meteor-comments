@@ -11,6 +11,9 @@ Handlebars.registerHelper 'unreadWidgetDropdown', (opts) ->
   template = opts.dropdownTemplate
   new Handlebars.SafeString(Template[template](opts))
 
+Handlebars.registerHelper 'comments', (context) ->
+  if context then new Handlebars.SafeString(Template['_comments'](context))
+
 Handlebars.registerHelper 'count', (opts) ->
   opts = _.extend Comments.settings.unreadWidget, opts
   tags = opts.tags
