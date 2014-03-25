@@ -34,3 +34,13 @@ class Comment extends Minimongoid
 
   commentPreview: ->
     @comment.substring(0, 20) + '...'
+
+Comment._collection.allow
+  insert: (userId, fundraiser) ->
+    userId
+
+  update: (userId, fundraiser, fields) ->
+    userId
+
+  remove: (userId, fundraiser) ->
+    userId
