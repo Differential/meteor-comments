@@ -50,10 +50,18 @@ Template._comments.events
     Session.set 'comments.new.previewing', preview
 
   'click .add-comment': (e) ->
+    getUsername = ->
+      username = ""
+      user = Meteor.user()
+      if user.emails and then user.emails[0].address
+      if user.username then username = user.username
+      if user.profile and user.profile.name then username = user.profile.name
+      if user.profile and user.profile.firstName  then user.profile.firstName + " " + Meteor.user().profile.lastName
+
     comment = 
       associationId: @id
       userId: Meteor.userId()
-      username: Meteor.user().username || Meteor.user().emails[0].address
+      username: username
       comment: Session.get 'comments.new.value'
       path: Router.current().path
       notify: []
