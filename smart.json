@@ -3,7 +3,7 @@
   "description": "Lets you add comments to any document, and optionally display notifications for unread comments.",
   "homepage": "https://github.com/BeDifferential/meteor-comments",
   "author": "Differential (http://differential.io)",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "git": "https://github.com/BeDifferential/meteor-comments.git",
   "packages": {
     "iron-router": "0.6.2",

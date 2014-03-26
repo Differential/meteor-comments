@@ -8,6 +8,5 @@ Meteor.publish 'unreadComments', ->
   Comment.find({'notify': { $in: [@userId]}})
 
 Meteor.publish 'commentsUser', ->
-  console.log 'hey'
   Meteor.users.find _id: @userId,
     fields: profile: 1
