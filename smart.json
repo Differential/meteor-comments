@@ -4,7 +4,7 @@
   "homepage": "https://github.com/BeDifferential/meteor-comments",
   "author": "Differential (http://differential.io)",
   "version": "0.2.5",
-  "git": "https://github.com/BeDifferential/meteor-comments.git",
+  "git": "https://github.com/Differential/meteor-comments.git",
   "packages": {
     "iron-router": "0.6.2",
     "minimongoid": "0.8.3",
