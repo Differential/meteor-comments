@@ -6,7 +6,7 @@ Package.on_use(function (api, where) {
 
   api.use([
     'templating',
-    'handlebars',
+    'ui',
     'less',
     'timeago',
     'ace-embed'

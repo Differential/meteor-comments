@@ -1,22 +1,27 @@
-<template name="_unreadWidget">
+<template name="unreadWidget">
   <div class="btn-group unread-widget">
-    {{unreadWidgetTrigger this}}
-    {{unreadWidgetDropdown this}}
+  {{#with triggerTemplate triggerTpl}}
+    {{> .}}
+  {{/with}}
+
+  {{#with dropdownTemplate dropdownTpl}}
+    {{> .}}
+  {{/with}}
   </div>
 </template>
 
-<template name="_unreadWidgetTrigger">
-  <button type="button" 
-          class="btn btn-default dropdown-toggle comments-btn"
-          {{#unless count}} disabled {{/unless}} 
+<template name="unreadWidgetTrigger">
+  <button type="button"
+          class="btn dropdown-toggle comments-btn"
+          disabled="{{disabled}}"
           data-toggle="dropdown">
     <i class="fa fa-comment icon-comment"></i>
-    <span class="label {{countLabelClass}} unread-count">{{count}}</span>
+    <div class="label {{countLabelClass}} unread-count">{{count}}</div>
     <i class="fa fa-caret-down icon-caret-down"></i>
   </button>
 </template>
 
-<template name="_unreadWidgetDropdown">
+<template name="unreadWidgetDropdown">
   <ul class="dropdown-menu comments-dropdown pull-{{align}}" role="menu">
     {{#if unreadComments}}
     <li>

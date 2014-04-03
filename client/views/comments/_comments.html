@@ -1,4 +1,4 @@
-<template name="_comments">
+<template name="comments">
   <div class="comments">
     <h3>Comments</h3>
     <ul class="list-group">
@@ -23,9 +23,7 @@
         </div>
 
         <div id="editor-wrapper" class="{{#if previewing}}hide{{/if}}">
-        {{#constant}}
           <div id="editor"></div>
-        {{/constant}}
         </div>
 
         <button class="toggle-preview">

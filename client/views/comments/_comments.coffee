@@ -1,4 +1,4 @@
-Handlebars.registerHelper "commentDate", (date) ->
+UI.registerHelper "commentDate", (date) ->
   if date
     dateObj = new Date(date)
     return $.timeago(dateObj)
@@ -6,14 +6,14 @@ Handlebars.registerHelper "commentDate", (date) ->
 
 Editor = {}
 
-Template._comments.created = ->
+Template.comments.created = ->
   Session.set 'comments.new.value', ''
   Session.set 'comments.new.previewing', false
 
 #
 #  Commenting Widget
 #
-Template._comments.rendered = ->
+Template.comments.rendered = ->
   commentable = @data
   _.each commentable.comments(), (comment) ->
     comment.clearNotification()
@@ -29,11 +29,11 @@ Template._comments.rendered = ->
     Editor.on 'change', (e) ->
       Session.set 'comments.new.value', Editor.getValue()
 
-  setTimeout setup, 300
+  if Meteor.user() then setTimeout setup, 300
 
   $('.toggle-preview').tooltip title: 'Click to toggle markdown preview mode.'
     
-Template._comments.helpers
+Template.comments.helpers
   comments: ->
     _.sortBy @comments(), 'createdAt'
 
@@ -43,7 +43,7 @@ Template._comments.helpers
   previewing: ->
     Session.get 'comments.new.previewing'
 
-Template._comments.events
+Template.comments.events
   'click .toggle-preview': (e) ->
     preview = Session.get 'comments.new.previewing'
     preview = !preview

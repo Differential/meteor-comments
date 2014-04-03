@@ -1,9 +1,17 @@
-Template._unreadWidgetDropdown.rendered = ->
+Template.unreadWidget.helpers
+  triggerTemplate: (tpl) ->
+    if tpl then Template[tpl] else Template['unreadWidgetTrigger']
+
+  dropdownTemplate: (tpl) ->
+    if tpl then Template[tpl] else Template['unreadWidgetDropdown']
+
+
+Template.unreadWidgetDropdown.rendered = ->
   # Set the width of the dropdown to the computed value so the slide works correctly
   $('.unread-widget').on 'shown.bs.dropdown', (e) ->
     $('.comments-dropdown').css 'width', $('.comments-dropdown').width()
 
-Template._unreadWidgetDropdown.events
+Template.unreadWidgetDropdown.events
   'click .clear-comments': (e) ->
     e.preventDefault()
     e.stopPropagation()
@@ -24,3 +32,7 @@ Template._unreadWidgetDropdown.events
             $('[data-toggle="dropdown"]').parent().removeClass('open')
             _.each Comment.unread(tags), (comment) ->
               comment.clearNotification()
+
+Template.unreadWidgetDropdown.helpers
+  disabled: ->
+    @count > 0
