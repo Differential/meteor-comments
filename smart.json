@@ -7,7 +7,7 @@
   "git": "https://github.com/Differential/meteor-comments.git",
   "packages": {
     "minimongoid": "0.8.3",
-    "timeago": "0.0.3",
+    "timeago": "0.0.4",
     "font-awesome": "4.0.3",
     "ace-embed": "0.0.4",
     "marked": "0.3.2"
