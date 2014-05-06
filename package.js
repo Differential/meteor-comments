@@ -9,7 +9,8 @@ Package.on_use(function (api, where) {
     'ui',
     'less',
     'timeago',
-    'ace-embed'
+    'ace-embed',
+    'marked'
   ], 'client');
 
   api.use([
